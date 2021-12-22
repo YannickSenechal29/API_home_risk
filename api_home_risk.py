@@ -3,9 +3,9 @@ import flask
 import pandas as pd
 
 # Load our model with pickle (adresses may be changed for serialisation)
-model = pickle.load(open('API/lgbm_home_risk_model.pkl', 'rb'))
+model = pickle.load(open('lgbm_home_risk_model.pkl', 'rb'))
 # Load data test sample (index_col = 0 to keep id of loan)
-df_test_sample = pd.read_csv('API/test_sample_data_home_risk.csv', index_col = 0)
+df_test_sample = pd.read_csv('test_sample_data_home_risk.csv', index_col = 0)
 # Drop predict last column predict proba of our dataframe not used here
 df_test_sample.drop(columns = 'TARGET_PROB', inplace = True)
 # Define the treshold of our application for refused loan
