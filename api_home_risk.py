@@ -34,4 +34,7 @@ def predict():
 # define endpoint for Flask
 app.add_url_rule('/scores', 'scores', predict)
 
-app.run()
+# add command for running the application on cloud with Heroku
+if __name__ == '__main__':
+    ## Threaded option to enable multiple instances for multiple user access support
+    app.run(threaded=True, port=5000)
